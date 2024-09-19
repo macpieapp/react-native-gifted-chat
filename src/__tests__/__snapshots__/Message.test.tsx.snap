@@ -6,8 +6,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
 <View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "center",
           "justifyContent": "center",
           "marginBottom": 10,
@@ -20,8 +20,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
     <View>
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "transparent",
               "color": "#b2b2b2",
               "fontSize": 12,
@@ -37,15 +37,15 @@ exports[`Message component should render <Message /> and compare with snapshot 1
   </View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "flex-end",
           "flexDirection": "row",
           "justifyContent": "flex-start",
           "marginLeft": 8,
           "marginRight": 0,
         },
-        {
+        Object {
           "marginBottom": 10,
         },
         false,
@@ -55,8 +55,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
   >
     <View
       style={
-        [
-          {
+        Array [
+          Object {
             "alignItems": "flex-start",
             "flex": 1,
           },
@@ -66,8 +66,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
     >
       <View
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "#f0f0f0",
               "borderRadius": 15,
               "justifyContent": "flex-end",
@@ -82,15 +82,6 @@ exports[`Message component should render <Message /> and compare with snapshot 1
       >
         <View
           accessibilityRole="text"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": undefined,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -104,16 +95,16 @@ exports[`Message component should render <Message /> and compare with snapshot 1
           <View>
             <View
               style={
-                [
-                  {},
+                Array [
+                  Object {},
                   undefined,
                 ]
               }
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
                       "color": "black",
                       "fontSize": 16,
                       "lineHeight": 20,
@@ -129,9 +120,9 @@ exports[`Message component should render <Message /> and compare with snapshot 1
               >
                 <Text
                   style={
-                    [
-                      [
-                        {
+                    Array [
+                      Array [
+                        Object {
                           "color": "black",
                           "fontSize": 16,
                           "lineHeight": 20,
@@ -154,8 +145,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
           </View>
           <View
             style={
-              [
-                {
+              Array [
+                Object {
                   "flexDirection": "row",
                   "justifyContent": "flex-start",
                 },
@@ -165,8 +156,8 @@ exports[`Message component should render <Message /> and compare with snapshot 1
           >
             <View
               style={
-                [
-                  {
+                Array [
+                  Object {
                     "marginBottom": 5,
                     "marginLeft": 10,
                     "marginRight": 10,
@@ -177,8 +168,9 @@ exports[`Message component should render <Message /> and compare with snapshot 1
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
                       "color": "#aaa",
                       "fontSize": 10,
                       "textAlign": "right",
@@ -202,8 +194,8 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
 <View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "center",
           "justifyContent": "center",
           "marginBottom": 10,
@@ -216,8 +208,8 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
     <View>
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "transparent",
               "color": "#b2b2b2",
               "fontSize": 12,
@@ -233,15 +225,15 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
   </View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "flex-end",
           "flexDirection": "row",
           "justifyContent": "flex-start",
           "marginLeft": 8,
           "marginRight": 0,
         },
-        {
+        Object {
           "marginBottom": 10,
         },
         false,
@@ -251,45 +243,19 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
   >
     <View
       style={
-        [
-          {
+        Array [
+          Object {
             "marginRight": 8,
           },
-          undefined,
+          Object {},
           undefined,
         ]
       }
-    >
-      <View
-        accessibilityRole="image"
-        style={
-          [
-            {
-              "alignItems": "center",
-              "borderRadius": 20,
-              "height": 40,
-              "justifyContent": "center",
-              "width": 40,
-            },
-            {
-              "backgroundColor": "transparent",
-            },
-            [
-              {
-                "borderRadius": 18,
-                "height": 36,
-                "width": 36,
-              },
-              undefined,
-            ],
-          ]
-        }
-      />
-    </View>
+    />
     <View
       style={
-        [
-          {
+        Array [
+          Object {
             "alignItems": "flex-start",
             "flex": 1,
           },
@@ -299,8 +265,8 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
     >
       <View
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "#f0f0f0",
               "borderRadius": 15,
               "justifyContent": "flex-end",
@@ -315,15 +281,6 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
       >
         <View
           accessibilityRole="text"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": undefined,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -337,16 +294,16 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
           <View>
             <View
               style={
-                [
-                  {},
+                Array [
+                  Object {},
                   undefined,
                 ]
               }
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
                       "color": "black",
                       "fontSize": 16,
                       "lineHeight": 20,
@@ -362,9 +319,9 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
               >
                 <Text
                   style={
-                    [
-                      [
-                        {
+                    Array [
+                      Array [
+                        Object {
                           "color": "black",
                           "fontSize": 16,
                           "lineHeight": 20,
@@ -387,8 +344,8 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
           </View>
           <View
             style={
-              [
-                {
+              Array [
+                Object {
                   "flexDirection": "row",
                   "justifyContent": "flex-start",
                 },
@@ -398,8 +355,8 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
           >
             <View
               style={
-                [
-                  {
+                Array [
+                  Object {
                     "marginBottom": 5,
                     "marginLeft": 10,
                     "marginRight": 10,
@@ -410,8 +367,9 @@ exports[`Message component should render <Message /> with Avatar 1`] = `
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
                       "color": "#aaa",
                       "fontSize": 10,
                       "textAlign": "right",
@@ -435,8 +393,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
 <View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "center",
           "justifyContent": "center",
           "marginBottom": 10,
@@ -449,8 +407,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
     <View>
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "transparent",
               "color": "#b2b2b2",
               "fontSize": 12,
@@ -466,15 +424,15 @@ exports[`Message component should render null if user has no Avatar 1`] = `
   </View>
   <View
     style={
-      [
-        {
+      Array [
+        Object {
           "alignItems": "flex-end",
           "flexDirection": "row",
           "justifyContent": "flex-start",
           "marginLeft": 8,
           "marginRight": 0,
         },
-        {
+        Object {
           "marginBottom": 10,
         },
         false,
@@ -484,8 +442,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
   >
     <View
       style={
-        [
-          {
+        Array [
+          Object {
             "alignItems": "flex-start",
             "flex": 1,
           },
@@ -495,8 +453,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
     >
       <View
         style={
-          [
-            {
+          Array [
+            Object {
               "backgroundColor": "#f0f0f0",
               "borderRadius": 15,
               "justifyContent": "flex-end",
@@ -511,15 +469,6 @@ exports[`Message component should render null if user has no Avatar 1`] = `
       >
         <View
           accessibilityRole="text"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": undefined,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -533,16 +482,16 @@ exports[`Message component should render null if user has no Avatar 1`] = `
           <View>
             <View
               style={
-                [
-                  {},
+                Array [
+                  Object {},
                   undefined,
                 ]
               }
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
                       "color": "black",
                       "fontSize": 16,
                       "lineHeight": 20,
@@ -558,9 +507,9 @@ exports[`Message component should render null if user has no Avatar 1`] = `
               >
                 <Text
                   style={
-                    [
-                      [
-                        {
+                    Array [
+                      Array [
+                        Object {
                           "color": "black",
                           "fontSize": 16,
                           "lineHeight": 20,
@@ -583,8 +532,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
           </View>
           <View
             style={
-              [
-                {
+              Array [
+                Object {
                   "flexDirection": "row",
                   "justifyContent": "flex-start",
                 },
@@ -594,8 +543,8 @@ exports[`Message component should render null if user has no Avatar 1`] = `
           >
             <View
               style={
-                [
-                  {
+                Array [
+                  Object {
                     "marginBottom": 5,
                     "marginLeft": 10,
                     "marginRight": 10,
@@ -606,8 +555,9 @@ exports[`Message component should render null if user has no Avatar 1`] = `
             >
               <Text
                 style={
-                  [
-                    {
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
                       "color": "#aaa",
                       "fontSize": 10,
                       "textAlign": "right",
