@@ -148,6 +148,9 @@ export default class MessageContainer<
   }
 
   renderTypingIndicator = () => {
+    if (Platform.OS === 'web')
+      return null
+
     return <TypingIndicator isTyping={this.props.isTyping || false} />
   }
 
@@ -230,6 +233,7 @@ export default class MessageContainer<
       const messageProps: Message['props'] = {
         ...restProps,
         user,
+        key: item._id.toString(),
         currentMessage: item,
         previousMessage,
         inverted,
@@ -240,7 +244,7 @@ export default class MessageContainer<
       if (this.props.renderMessage)
         return this.props.renderMessage(messageProps)
 
-      return <Message key={item._id.toString()} {...messageProps} />
+      return <Message {...messageProps} />
     }
     return null
   }

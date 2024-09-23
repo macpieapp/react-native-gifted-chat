@@ -6,7 +6,7 @@ import { Avatar } from '../GiftedChat'
 
 it('should render <Avatar /> and compare with snapshot', () => {
   const tree = renderer
-    .create(<Avatar renderAvatar={() => 'renderAvatar'} position='left' />)
+    .create(<Avatar renderAvatar={() => 'renderAvatar'} />)
     .toJSON()
 
   expect(tree).toMatchSnapshot()

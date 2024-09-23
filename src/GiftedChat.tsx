@@ -7,6 +7,7 @@ import React, {
   useCallback,
   MutableRefObject,
 } from 'react'
+import 'react-native-get-random-values' // NOTE: FOR "uuid" SUPPORT
 import {
   ActionSheetOptions,
   ActionSheetProvider,
@@ -33,7 +34,7 @@ import Bubble from './Bubble'
 import { Composer, ComposerProps } from './Composer'
 import { MAX_COMPOSER_HEIGHT, MIN_COMPOSER_HEIGHT, TEST_ID } from './Constant'
 import { Day, DayProps } from './Day'
-import { GiftedAvatar } from './GiftedAvatar'
+import GiftedAvatar from './GiftedAvatar'
 import { GiftedChatContext } from './GiftedChatContext'
 import { InputToolbar, InputToolbarProps } from './InputToolbar'
 import { LoadEarlier, LoadEarlierProps } from './LoadEarlier'
@@ -75,8 +76,6 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   messages?: TMessage[]
   /* Typing Indicator state */
   isTyping?: boolean
-  /* Controls whether or not to show user.name property in the message bubble */
-  renderUsernameOnMessage?: boolean
   /* Messages container style */
   messagesContainerStyle?: StyleProp<ViewStyle>
   /* Input text; default is undefined, but if specified, it will override GiftedChat's internal state */
@@ -117,8 +116,6 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   imageProps?: Message<TMessage>['props']
   /* Extra props to be passed to the MessageImage's Lightbox */
   lightboxProps?: LightboxProps
-  /* Distance of the chat from the bottom of the screen (e.g. useful if you display a tab bar); default is 0 */
-  bottomOffset?: number
   /* Minimum height of the input toolbar; default is 44 */
   minInputToolbarHeight?: number
   /* Extra props to be passed to the messages <ListView>; some props can't be overridden, see the code in MessageContainer.render() for details */
@@ -126,7 +123,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /*  Extra props to be passed to the <TextInput> */
   textInputProps?: object
   /* Determines whether the keyboard should stay visible after a tap; see <ScrollView> docs */
-  keyboardShouldPersistTaps?: 'always' | 'never' | 'handled'
+  keyboardShouldPersistTaps?: boolean
   /* Max message composer TextInput length */
   maxInputLength?: number
   /* Force send button */
@@ -220,7 +217,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /* Callback when the input text changes */
   onInputTextChanged?(text: string): void
   /* Custom parse patterns for react-native-parsed-text used to linking message content (like URLs and phone numbers) */
-  parsePatterns?: (linkStyle?: TextStyle) => { type?: string, pattern?: RegExp, style?: StyleProp<TextStyle> | object, onPress?: unknown, renderText?: unknown }[]
+  parsePatterns?: (linkStyle: TextStyle) => []
   onQuickReply?(replies: Reply[]): void
   renderQuickReplies?(
     quickReplies: QuickRepliesProps<TMessage>,
@@ -250,7 +247,6 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
     textInputProps,
     renderChatFooter = null,
     renderInputToolbar = null,
-    bottomOffset = 0,
     keyboardShouldPersistTaps = Platform.select({
       ios: 'never',
       android: 'always',
@@ -497,10 +493,12 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
   const inputToolbarFragment = useMemo(() => {
     if (!isInitialized)
       return null
+    if (!text)
+      return null
 
     const inputToolbarProps = {
       ...props,
-      text: getTextFromProp(text!),
+      text: getTextFromProp(text),
       composerHeight: Math.max(minComposerHeight!, composerHeight),
       onSend: _onSend,
       onInputSizeChanged,
@@ -554,7 +552,7 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
   useEffect(() => {
     if (!inverted && messages?.length)
       setTimeout(() => scrollToBottom(false), 200)
-  }, [messages?.length, inverted, scrollToBottom])
+  }, [messages, inverted, scrollToBottom])
 
   useAnimatedReaction(
     () => keyboard.height.value,
@@ -564,10 +562,9 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
         if (isKeyboardMovingUp !== trackingKeyboardMovement.value) {
           trackingKeyboardMovement.value = isKeyboardMovingUp
           keyboardOffsetBottom.value = withTiming(
-            isKeyboardMovingUp ? insets.bottom + bottomOffset : 0,
+            isKeyboardMovingUp ? insets.bottom : 0,
             {
-              // If `bottomOffset` exists, we change the duration to a smaller value to fix the delay in the keyboard animation speed
-              duration: bottomOffset ? 150 : 400,
+              duration: 400,
             }
           )
 

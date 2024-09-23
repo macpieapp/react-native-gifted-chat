@@ -7,7 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import { GiftedAvatar } from './GiftedAvatar'
+import GiftedAvatar from './GiftedAvatar'
 import { StylePropType, isSameUser, isSameDay } from './utils'
 import { IMessage, LeftRightStyle, User } from './Models'
 
@@ -101,13 +101,13 @@ export function Avatar<TMessage extends IMessage = IMessage> (
       <View
         style={[
           styles[position].container,
-          containerStyle?.[position],
+          containerStyle && containerStyle[position],
         ]}
       >
         <GiftedAvatar
           avatarStyle={[
             styles[position].image,
-            imageStyle?.[position],
+            imageStyle && imageStyle[position],
           ]}
         />
       </View>
@@ -128,12 +128,12 @@ export function Avatar<TMessage extends IMessage = IMessage> (
         onLongPressAvatar,
       })
 
-    if (currentMessage)
+    if (props.currentMessage)
       return (
         <GiftedAvatar
           avatarStyle={[
             styles[position].image,
-            imageStyle?.[position],
+            imageStyle && imageStyle[position],
           ]}
           user={currentMessage.user}
           onPress={() => onPressAvatar?.(currentMessage.user)}
@@ -149,7 +149,7 @@ export function Avatar<TMessage extends IMessage = IMessage> (
       style={[
         styles[position].container,
         renderAvatarOnTop && styles[position].onTop,
-        containerStyle?.[position],
+        containerStyle && containerStyle[position],
       ]}
     >
       {renderAvatarComponent()}

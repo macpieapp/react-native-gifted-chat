@@ -16,6 +16,7 @@ import { IMessage } from './Models'
 import { StylePropType } from './utils'
 
 const styles = StyleSheet.create({
+  container: {},
   image: {
     width: 150,
     height: 100,
@@ -50,7 +51,7 @@ export function MessageImage<TMessage extends IMessage = IMessage> ({
     return null
 
   return (
-    <View style={containerStyle}>
+    <View style={[styles.container, containerStyle]}>
       {/* @ts-expect-error: Lightbox types are not fully compatible */}
       <Lightbox
         activeProps={{
